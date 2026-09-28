@@ -1,0 +1,1431 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#080808" />
+
+  <title>Willcox Band — Blues Rock Live</title>
+  <meta name="description" content="Willcox Band — blues-rock live. Plus de 3 000 concerts, scènes et festivals en France et en Europe. Booking, vidéos, musique et press kit." />
+  <link rel="canonical" href="https://willcoxband.netlify.app/" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Willcox Band — Blues Rock Live" />
+  <meta property="og:description" content="Just straight blues-rock Live, musique, galerie, press kit et booking." />
+  <meta property="og:url" content="https://willcoxband.netlify.app/" />
+  <meta property="og:image" content="https://willcoxband.netlify.app/assets/image00018.jpeg" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+  <style>
+    :root {
+      --bg: #080808;
+      --surface: #111111;
+      --surface-2: #171717;
+      --text: #f5f5f5;
+      --muted: #a8a8a8;
+      --purple: #8b5cf6;
+      --purple-2: #a78bfa;
+      --line: rgba(255,255,255,.09);
+      --glass: rgba(8,8,8,.72);
+      --shadow: 0 18px 50px rgba(0,0,0,.35);
+      --radius: 20px;
+      --max: 1180px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font-family: "Inter", system-ui, sans-serif;
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    img, video { max-width: 100%; display: block; }
+    a { color: inherit; text-decoration: none; }
+    button, input, textarea { font: inherit; }
+
+    .container {
+      width: min(calc(100% - 40px), var(--max));
+      margin-inline: auto;
+    }
+
+    .eyebrow {
+      color: var(--purple-2);
+      text-transform: uppercase;
+      letter-spacing: .18em;
+      font-weight: 700;
+      font-size: .78rem;
+    }
+
+    .section {
+      padding: 104px 0;
+      position: relative;
+    }
+
+    .section--alt {
+      background: linear-gradient(180deg, rgba(139,92,246,.05), transparent 35%), var(--surface);
+    }
+
+    .section-title {
+      font-family: "Bebas Neue", sans-serif;
+      font-size: clamp(2.8rem, 6vw, 5.8rem);
+      letter-spacing: .02em;
+      line-height: .95;
+      margin: 10px 0 18px;
+      font-weight: 400;
+    }
+
+    .section-lead {
+      max-width: 720px;
+      color: var(--muted);
+      font-size: clamp(1rem, 2vw, 1.15rem);
+      margin: 0;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 48px;
+      padding: 0 20px;
+      border-radius: 999px;
+      border: 1px solid var(--line);
+      color: var(--text);
+      background: rgba(255,255,255,.04);
+      font-weight: 700;
+      letter-spacing: .01em;
+      transition: .25s ease;
+      cursor: pointer;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+      border-color: rgba(255,255,255,.22);
+      background: rgba(255,255,255,.08);
+    }
+
+    .btn--primary {
+      background: var(--purple);
+      border-color: var(--purple);
+      box-shadow: 0 10px 34px rgba(139,92,246,.24);
+    }
+
+    .btn--primary:hover {
+      background: #7c3aed;
+      border-color: #7c3aed;
+    }
+
+    .btn--ghost {
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      background: rgba(0,0,0,.25);
+    }
+
+    /* NAV */
+    .site-header {
+      position: fixed;
+      inset: 0 0 auto 0;
+      z-index: 1000;
+      transition: background .25s ease, border-color .25s ease;
+      border-bottom: 1px solid transparent;
+    }
+
+    .site-header.scrolled {
+      background: rgba(8,8,8,.88);
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+      border-color: var(--line);
+    }
+
+    .nav {
+      min-height: 78px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 28px;
+    }
+
+    .brand {
+      font-family: "Bebas Neue", sans-serif;
+      font-size: 2rem;
+      letter-spacing: .06em;
+      white-space: nowrap;
+    }
+
+    .brand span { color: var(--purple-2); }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      font-size: .9rem;
+      font-weight: 700;
+    }
+
+    .nav-links a:not(.btn) {
+      color: #dadada;
+      transition: color .2s ease;
+    }
+    .nav-links a:not(.btn):hover { color: #fff; }
+
+    .nav-actions {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+    }
+
+    .lang-toggle {
+      min-width: 46px;
+      min-height: 42px;
+      padding: 0 13px;
+    }
+
+    .menu-toggle {
+      display: none;
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      border: 1px solid var(--line);
+      background: rgba(0,0,0,.3);
+      color: #fff;
+      cursor: pointer;
+    }
+
+    /* HERO */
+    .hero {
+      min-height: 100svh;
+      position: relative;
+      display: grid;
+      align-items: end;
+      overflow: hidden;
+      isolation: isolate;
+    }
+
+    .hero-media,
+    .hero-media img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+    }
+
+    .hero-media img {
+      object-fit: cover;
+      object-position: center 22%;
+      transform: scale(1.015);
+      animation: heroZoom 14s ease-in-out infinite alternate;
+    }
+
+    @keyframes heroZoom {
+      to { transform: scale(1.06); }
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+      background:
+        linear-gradient(180deg, rgba(0,0,0,.25) 0%, rgba(0,0,0,.16) 28%, rgba(0,0,0,.78) 74%, #080808 100%),
+        radial-gradient(circle at 70% 20%, rgba(139,92,246,.22), transparent 35%);
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      padding: 150px 0 86px;
+      max-width: 870px;
+    }
+
+    .hero-kicker {
+      display: inline-flex;
+      gap: 10px;
+      align-items: center;
+      color: #ddd;
+      font-size: .85rem;
+      text-transform: uppercase;
+      letter-spacing: .16em;
+      font-weight: 700;
+    }
+
+    .hero-kicker::before {
+      content: "";
+      width: 38px;
+      height: 2px;
+      background: var(--purple);
+    }
+
+    .hero h1 {
+      font-family: "Bebas Neue", sans-serif;
+      font-size: clamp(5.8rem, 15vw, 12.5rem);
+      font-weight: 400;
+      letter-spacing: -.02em;
+      line-height: .75;
+      margin: 26px 0 28px;
+      text-shadow: 0 10px 40px rgba(0,0,0,.35);
+    }
+
+    .hero h1 span {
+      display: block;
+      color: var(--purple-2);
+      font-size: .36em;
+      line-height: .9;
+      margin-top: .3em;
+      letter-spacing: .08em;
+    }
+
+    .hero-copy {
+      max-width: 690px;
+      font-size: clamp(1rem, 2vw, 1.25rem);
+      color: #d7d7d7;
+      margin-bottom: 32px;
+    }
+
+    .hero-cta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .hero-scroll {
+      position: absolute;
+      z-index: 3;
+      right: 5vw;
+      bottom: 42px;
+      writing-mode: vertical-rl;
+      text-transform: uppercase;
+      letter-spacing: .2em;
+      font-size: .7rem;
+      color: #c7c7c7;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .hero-scroll::after {
+      content: "";
+      height: 54px;
+      width: 1px;
+      background: rgba(255,255,255,.45);
+    }
+
+    /* STATS */
+    .stats-bar {
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+      background: #0c0c0c;
+    }
+
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    .stat {
+      padding: 34px 26px;
+      text-align: center;
+      border-right: 1px solid var(--line);
+    }
+    .stat:last-child { border-right: 0; }
+
+    .stat strong {
+      display: block;
+      font-family: "Bebas Neue", sans-serif;
+      font-size: clamp(2.1rem, 5vw, 4rem);
+      font-weight: 400;
+      line-height: 1;
+    }
+
+    .stat span {
+      color: var(--muted);
+      font-size: .85rem;
+      text-transform: uppercase;
+      letter-spacing: .12em;
+    }
+
+    /* LIVE FEATURE */
+    .live-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 28px;
+      align-items: stretch;
+      margin-top: 28px;
+    }
+
+    .video-card,
+    .content-card {
+      background: var(--surface-2);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      overflow: hidden;
+      box-shadow: var(--shadow);
+    }
+
+    .video-card video {
+      width: 100%;
+      aspect-ratio: 16/9;
+      object-fit: cover;
+      background: #000;
+    }
+
+    .video-meta {
+      padding: 18px 20px 20px;
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      align-items: center;
+    }
+
+    .video-meta strong { font-size: 1rem; }
+    .video-meta span { color: var(--muted); font-size: .85rem; }
+    .video-meta .eyebrow { margin-bottom: 5px; font-size: .68rem; }
+    .video-meta p { margin: 7px 0 0; color: var(--muted); font-size: .86rem; line-height: 1.5; }
+
+    .content-card {
+      padding: 32px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .content-card h3 {
+      font-family: "Bebas Neue", sans-serif;
+      font-size: 2.6rem;
+      font-weight: 400;
+      line-height: 1;
+      margin: 0 0 14px;
+    }
+
+    .content-card p { color: var(--muted); margin: 0 0 24px; }
+
+    /* ABOUT */
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 64px;
+      align-items: center;
+    }
+
+    .about-photo {
+      position: relative;
+    }
+
+    .about-photo img {
+      position: relative;
+      z-index: 1;
+      display: block;
+      width: 100%;
+      height: auto;
+      object-fit: contain;
+      border-radius: 26px;
+      box-shadow: var(--shadow);
+    }
+
+    .about-copy p {
+      color: #c8c8c8;
+      font-size: 1.05rem;
+    }
+
+    .about-copy .quote {
+      border-left: 2px solid var(--purple);
+      padding-left: 18px;
+      color: #fff;
+      font-weight: 700;
+      margin-top: 28px;
+    }
+
+    /* APPEARANCES */
+    .appearance-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 12px;
+      margin-top: 42px;
+    }
+
+    .appearance {
+      min-height: 135px;
+      display: flex;
+      align-items: flex-end;
+      padding: 20px;
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      background:
+        linear-gradient(160deg, rgba(139,92,246,.12), transparent 60%),
+        #111;
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      position: relative;
+      overflow: hidden;
+      transition: .25s ease;
+      isolation: isolate;
+    }
+
+    .appearance::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, rgba(8,8,8,.18), rgba(8,8,8,.78));
+      z-index: -1;
+      pointer-events: none;
+    }
+
+    .appearance:hover {
+      transform: translateY(-4px);
+      border-color: rgba(139,92,246,.5);
+    }
+
+    .appearance strong { line-height: 1.25; text-shadow: 0 2px 12px rgba(0,0,0,.55); }
+
+
+    .appearance--biker-days { background-image: url("assets/festivals/biker-days-basel.jpg"); }
+    .appearance--rock-cars { background-image: url("assets/festivals/rock-cars.jpg"); }
+    .appearance--clefcy { background-image: url("assets/festivals/clefcy-rock.jpg"); background-position: top center; }
+    .appearance--aber { background-image: url("assets/festivals/aber-blues-lesneven.jpg"); }
+    .appearance--victory { background-image: url("assets/festivals/victory-riders.jpg"); }
+    .appearance--haybes { background-image: url("assets/festivals/blues-in-haybes.jpg"); }
+    .appearance--harley { background-image: url("assets/festivals/harley-days-cote-dopale.jpg"); }
+    .appearance--axone { background-image: url("assets/festivals/axone-tattoo-show.jpg"); }
+    .appearance--poudriere { background-image: url("assets/festivals/la-poudriere.jpg"); }
+    .appearance--tattoo { background-image: url("assets/galerie/488494.jpg"); background-position: center 35%; }
+    .appearance--presquile { background-image: url("assets/festivals/presquile-blues-festival.jpg"); }
+    .appearance--raismes { background-image: url("assets/festivals/raismes-fest.jpg"); }
+    .appearance--mcjets { background-image: url("assets/festivals/concentration-mc-jets.jpg"); }
+    .appearance--narvalos { background-image: url("assets/festivals/narvalos-bikers.jpg"); }
+    .appearance--bluesroute { background-image: url("assets/festivals/blues-route-festival.jpg"); }
+    .appearance--more { background-image: url("assets/galerie/4878.jpg"); background-position: center; }
+
+    /* MUSIC */
+    .music-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+      margin-top: 42px;
+    }
+
+    .music-card {
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      padding: 22px;
+      background: var(--surface-2);
+    }
+
+    .music-card:first-child { grid-column: 1 / -1; }
+
+    .music-card h3 {
+      margin: 0 0 14px;
+      font-family: "Bebas Neue", sans-serif;
+      font-size: 1.55rem;
+      letter-spacing: .04em;
+      font-weight: 400;
+    }
+
+    .music-card audio { width: 100%; }
+
+    /* GALLERY */
+    .gallery-heading {
+      font-family: "Bebas Neue", sans-serif;
+      font-size: clamp(2.8rem, 6vw, 5.8rem);
+      letter-spacing: .02em;
+      line-height: .95;
+      margin: 0 0 32px;
+      font-weight: 400;
+      color: var(--purple);
+    }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      grid-auto-rows: 105px;
+      gap: 14px;
+      margin-top: 0;
+    }
+
+    .gallery-grid button {
+      padding: 0;
+      border: 0;
+      border-radius: 16px;
+      overflow: hidden;
+      background: transparent;
+      cursor: zoom-in;
+      position: relative;
+    }
+
+    .gallery-grid button::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, transparent, rgba(0,0,0,.22));
+      opacity: 0;
+      transition: .25s ease;
+    }
+
+    .gallery-grid button:hover::after { opacity: 1; }
+    .gallery-grid img { width: 100%; height: 100%; object-fit: cover; transition: .35s ease; }
+    .gallery-grid button:hover img { transform: scale(1.035); }
+
+    .g1 { grid-column: span 6; grid-row: span 4; }
+    .g2 { grid-column: span 3; grid-row: span 2; }
+    .g3 { grid-column: span 3; grid-row: span 2; }
+    .g4 { grid-column: span 3; grid-row: span 2; }
+    .g5 { grid-column: span 3; grid-row: span 2; }
+    .g6 { grid-column: span 4; grid-row: span 3; }
+    .g7 { grid-column: span 4; grid-row: span 3; }
+    .g8 { grid-column: span 4; grid-row: span 3; }
+    .g9 { grid-column: span 6; grid-row: span 3; }
+    .g10 { grid-column: span 6; grid-row: span 3; }
+    .g11 { grid-column: span 4; grid-row: span 3; }
+    .g12 { grid-column: span 4; grid-row: span 3; }
+    .g13 { grid-column: span 4; grid-row: span 3; }
+
+    /* BOOKING */
+    .booking {
+      position: relative;
+      overflow: hidden;
+      background:
+        radial-gradient(circle at 20% 10%, rgba(139,92,246,.22), transparent 30%),
+        linear-gradient(145deg, #111, #080808 70%);
+    }
+
+    .booking-grid {
+      display: grid;
+      grid-template-columns: .8fr 1.2fr;
+      gap: 64px;
+      align-items: start;
+    }
+
+    .booking-panel {
+      border: 1px solid var(--line);
+      border-radius: 24px;
+      padding: 30px;
+      background: rgba(255,255,255,.035);
+      backdrop-filter: blur(12px);
+    }
+
+    .booking-contact {
+      margin: 28px 0;
+      padding-top: 24px;
+      border-top: 1px solid var(--line);
+    }
+
+    .booking-contact small {
+      display: block;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: .12em;
+      margin-bottom: 6px;
+    }
+
+    .booking-contact a {
+      font-weight: 700;
+      word-break: break-word;
+    }
+
+    .form-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+    }
+
+    .field {
+      display: flex;
+      flex-direction: column;
+      gap: 7px;
+    }
+
+    .field--full { grid-column: 1 / -1; }
+    .field label { font-size: .82rem; font-weight: 700; color: #d7d7d7; }
+
+    .field input,
+    .field textarea {
+      width: 100%;
+      border: 1px solid var(--line);
+      background: #0c0c0c;
+      color: #fff;
+      border-radius: 12px;
+      padding: 13px 14px;
+      outline: none;
+      transition: border-color .2s ease, box-shadow .2s ease;
+    }
+
+    .field input:focus,
+    .field textarea:focus {
+      border-color: rgba(139,92,246,.8);
+      box-shadow: 0 0 0 4px rgba(139,92,246,.12);
+    }
+
+    .field textarea { min-height: 150px; resize: vertical; }
+
+    /* FOOTER */
+    footer {
+      padding: 48px 0;
+      border-top: 1px solid var(--line);
+    }
+
+    .footer-grid {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+      flex-wrap: wrap;
+    }
+
+    .footer-logo {
+      width: 170px;
+      height: auto;
+    }
+
+    .socials { display: flex; gap: 20px; align-items: center; }
+    .socials a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 60px;
+      height: 60px;
+      background: transparent;
+      border: 0;
+      border-radius: 0;
+      padding: 0;
+      transition: transform .2s ease, opacity .2s ease;
+    }
+    .socials a:hover { transform: translateY(-2px) scale(1.05); opacity: .9; }
+    .socials a:first-child img { width: 36px; height: 36px; object-fit: contain; display:block; }
+    .socials a:last-child img { width: 60px; height: 60px; object-fit: contain; display:block; transform: translateY(6px); }
+
+    .copyright { color: var(--muted); font-size: .86rem; }
+
+    /* LIGHTBOX */
+    .lightbox {
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,.94);
+      z-index: 2000;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+    }
+
+    .lightbox.open { display: flex; }
+    .lightbox img { max-width: min(1100px, 92vw); max-height: 86vh; border-radius: 16px; }
+
+    .lightbox-btn {
+      position: absolute;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      border: 1px solid var(--line);
+      background: rgba(20,20,20,.72);
+      color: #fff;
+      font-size: 1.4rem;
+      cursor: pointer;
+    }
+
+    .lightbox-close { top: 22px; right: 22px; }
+    .lightbox-prev { left: 22px; top: 50%; transform: translateY(-50%); }
+    .lightbox-next { right: 22px; top: 50%; transform: translateY(-50%); }
+
+    .mobile-booking {
+      display: none;
+      position: fixed;
+      left: 16px;
+      right: 16px;
+      bottom: 14px;
+      z-index: 999;
+      box-shadow: 0 14px 35px rgba(0,0,0,.4);
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity .7s ease, transform .7s ease;
+    }
+    .reveal.visible { opacity: 1; transform: none; }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after { animation: none !important; transition: none !important; }
+      .reveal { opacity: 1; transform: none; }
+    }
+
+    @media (max-width: 980px) {
+      .nav-links {
+        position: fixed;
+        inset: 78px 16px auto 16px;
+        padding: 18px;
+        border: 1px solid var(--line);
+        border-radius: 18px;
+        background: rgba(10,10,10,.97);
+        backdrop-filter: blur(18px);
+        flex-direction: column;
+        align-items: stretch;
+        gap: 4px;
+        opacity: 0;
+        pointer-events: none;
+        transform: translateY(-8px);
+        transition: .2s ease;
+      }
+
+      .nav-links.open {
+        opacity: 1;
+        pointer-events: auto;
+        transform: none;
+      }
+
+      .nav-links a { padding: 12px 8px; }
+      .nav-links .btn { width: 100%; margin-top: 6px; }
+      .menu-toggle { display: inline-grid; place-items: center; }
+      .nav-actions .desktop-book { display: none; }
+
+      .live-grid,
+      .about-grid,
+      .booking-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .appearance-grid { grid-template-columns: repeat(2, 1fr); }
+      .about-grid { gap: 42px; }
+      .booking-grid { gap: 34px; }
+    }
+
+    @media (max-width: 720px) {
+      .container { width: min(calc(100% - 28px), var(--max)); }
+      .section { padding: 76px 0; }
+      .nav { min-height: 70px; }
+      .nav-links { inset: 70px 14px auto 14px; }
+      .hero-content { padding-bottom: 74px; }
+      .hero h1 { font-size: clamp(5rem, 26vw, 8rem); }
+      .hero h1 span { font-size: .32em; }
+      .hero-scroll { display: none; }
+
+      .stats { grid-template-columns: 1fr; }
+      .stat { border-right: 0; border-bottom: 1px solid var(--line); }
+      .stat:last-child { border-bottom: 0; }
+
+      .appearance-grid { grid-template-columns: 1fr; }
+      .music-grid { grid-template-columns: 1fr; }
+      .music-card:first-child { grid-column: auto; }
+      .form-grid { grid-template-columns: 1fr; }
+      .field--full { grid-column: auto; }
+
+      .gallery-grid {
+        grid-template-columns: repeat(2, 1fr);
+        grid-auto-rows: 155px;
+      }
+      .gallery-grid button { grid-column: span 1 !important; grid-row: span 1 !important; }
+      .gallery-grid button:first-child { grid-column: 1 / -1 !important; grid-row: span 2 !important; }
+
+      .mobile-booking { display: inline-flex; }
+      body { padding-bottom: 78px; }
+      .lightbox-prev { left: 8px; }
+      .lightbox-next { right: 8px; }
+    }
+
+
+    /* INTRO VIDEO — plein écran au chargement */
+    body.intro-open { overflow: hidden; }
+
+    .intro-video {
+      position: fixed;
+      inset: 0;
+      z-index: 5000;
+      background: #000;
+      display: grid;
+      place-items: center;
+      overflow: hidden;
+      opacity: 1;
+      visibility: visible;
+      transition: opacity .65s ease, visibility .65s ease;
+    }
+
+    .intro-video.is-closing {
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+    }
+
+    .intro-video__media,
+    .intro-video__media video {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+    }
+
+    .intro-video__media video {
+      object-fit: cover;
+      background: #000;
+    }
+
+    .intro-video::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(180deg, rgba(0,0,0,.18) 0%, rgba(0,0,0,.04) 42%, rgba(0,0,0,.72) 100%),
+        radial-gradient(circle at 50% 42%, transparent 20%, rgba(0,0,0,.28) 100%);
+      pointer-events: none;
+    }
+
+    .intro-video__brand {
+      position: relative;
+      z-index: 2;
+      text-align: center;
+      padding: 20px;
+      pointer-events: none;
+    }
+
+    .intro-video__brand strong {
+      display: block;
+      font-family: "Bebas Neue", sans-serif;
+      font-size: clamp(5.5rem, 18vw, 15rem);
+      line-height: .78;
+      letter-spacing: .025em;
+      color: rgba(255,255,255,.94);
+      text-shadow: 0 10px 50px rgba(0,0,0,.45), 0 0 40px rgba(139,92,246,.18);
+    }
+
+    .intro-video__brand span {
+      display: inline-block;
+      margin-top: 22px;
+      font-size: clamp(.72rem, 1.3vw, .95rem);
+      font-weight: 700;
+      letter-spacing: .28em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,.78);
+    }
+
+    .intro-video__controls {
+      position: absolute;
+      z-index: 3;
+      left: 50%;
+      bottom: max(34px, env(safe-area-inset-bottom));
+      transform: translateX(-50%);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 12px;
+      width: min(92%, 680px);
+    }
+
+    .intro-video__controls .btn {
+      min-height: 50px;
+      justify-content: center;
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+    }
+
+    .intro-video__enter {
+      min-width: 220px;
+    }
+
+    @media (max-width: 640px) {
+      .intro-video__brand strong { font-size: clamp(5rem, 29vw, 8rem); }
+      .intro-video__brand span { letter-spacing: .18em; }
+      .intro-video__controls {
+        flex-direction: column;
+        width: min(88%, 360px);
+      }
+      .intro-video__controls .btn { width: 100%; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .intro-video { transition: none; }
+    }
+
+  </style>
+</head>
+<body class="intro-open">
+  <section class="intro-video" id="introVideoScreen" aria-label="Introduction vidéo Willcox">
+    <div class="intro-video__media" aria-hidden="true">
+      <video id="introVideo" autoplay muted loop playsinline preload="auto">
+        <source src="assets/its_been_a_long_time.mp4" type="video/mp4" />
+      </video>
+    </div>
+
+    <div class="intro-video__controls">
+      <button class="btn btn--ghost" id="introSoundBtn" type="button" aria-pressed="false">▶ Activer le son</button>
+      <button class="btn btn--primary intro-video__enter" id="introEnterBtn" type="button">Entrer sur le site →</button>
+    </div>
+  </section>
+
+  <header class="site-header" id="siteHeader">
+    <div class="container nav">
+      <a href="#top" class="brand" aria-label="Willcox accueil">WILL<span>COX</span></a>
+
+      <nav class="nav-links" id="navLinks" aria-label="Navigation principale">
+        <a href="#live" data-i18n="navLive">Live</a>
+        <a href="#about" data-i18n="navAbout">Le groupe</a>
+        <a href="#shows" data-i18n="navShows">Scènes</a>
+        <a href="#music" data-i18n="navMusic">Musique</a>
+        <a href="#gallery" data-i18n="navGallery">Galerie</a>
+        <a href="assets/pressbook_français.pdf" target="_blank" rel="noopener" data-i18n="navPress">Press kit</a>
+        <a class="btn btn--primary" href="#booking" data-i18n="navBook">Programmer Willcox</a>
+      </nav>
+
+      <div class="nav-actions">
+        <button class="btn btn--ghost lang-toggle" id="langToggle" type="button" aria-label="Changer de langue">EN</button>
+        <a class="btn btn--primary desktop-book" href="#booking" data-i18n="bookShort">Booking</a>
+        <button class="menu-toggle" id="menuToggle" type="button" aria-label="Ouvrir le menu" aria-expanded="false">☰</button>
+      </div>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="hero-media" aria-hidden="true">
+        <img src="assets/image00018.jpeg" alt="" />
+      </div>
+
+      <div class="container hero-content">
+        <div class="hero-kicker" data-i18n="heroKicker">Blues-rock • France & Europe</div>
+        <h1>
+          WILLCOX
+          <span data-i18n="heroTag">JUST STRAIGHT BLUES-ROCK</span>
+        </h1>
+        <p class="hero-copy" data-i18n="heroCopy">
+          Une énergie live brute, taillée pour les festivals, clubs et grands événements.
+        </p>
+        <div class="hero-cta">
+          <button type="button" class="btn btn--primary" id="replayIntroBtn" data-i18n="watchLive">▶ Voir le live</button>
+          <a href="#booking" class="btn btn--ghost" data-i18n="bookBand">Programmer le groupe</a>
+        </div>
+      </div>
+
+    </section>
+
+    <section class="stats-bar" aria-label="Chiffres clés">
+      <div class="container stats">
+        <div class="stat">
+          <strong>3000+</strong>
+          <span data-i18n="statShows">concerts</span>
+        </div>
+        <div class="stat">
+          <strong>EUROPE</strong>
+          <span data-i18n="statEurope">festivals & scènes</span>
+        </div>
+        <div class="stat">
+          <strong>LIVE</strong>
+          <span data-i18n="statEnergy">blues-rock energy</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="live">
+      <div class="container reveal">
+        <div class="eyebrow" data-i18n="liveEyebrow">Voir Willcox en live</div>
+
+        <div class="live-grid">
+          <article class="video-card">
+            <video id="presentationVideo" controls playsinline preload="metadata">
+              <source src="assets/presentation.mp4#t=0.2" type="video/mp4" />
+              Votre navigateur ne supporte pas la lecture vidéo.
+            </video>
+            <div class="video-meta">
+              <div>
+                <strong data-i18n="videoMainTitle">Willcox — Présentation Live</strong><br />
+                <span data-i18n="videoMainMeta">Blues-rock • Live performance</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="video-card">
+            <video controls playsinline preload="metadata">
+              <source src="assets/Teaser back to the bone.mp4" type="video/mp4" />
+              Votre navigateur ne supporte pas la lecture vidéo.
+            </video>
+            <div class="video-meta">
+              <div>
+                <strong data-i18n="videoSideTitle">BACK TO THE BONE</strong>
+                <p data-i18n="videoSideCopy">Un second aperçu de l'univers du groupe et de son énergie scénique.</p>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--alt" id="about">
+      <div class="container about-grid reveal">
+        <div class="about-photo">
+          <img src="assets/imageapropos.jpeg" alt="Sam Willcox sur scène" loading="lazy" />
+        </div>
+
+        <div class="about-copy">
+          <div class="eyebrow" data-i18n="aboutEyebrow">Le groupe</div>
+          <h2 class="section-title" data-i18n="aboutTitle">JUST STRAIGHT BLUES-ROCK</h2>
+          <p data-i18n="aboutP1">
+            Willcox Band écume la scène nationale et internationale depuis de nombreuses années, avec des passages dans de nombreux festivals à travers l'Europe.
+          </p>
+          <p data-i18n="aboutP2">
+            Avec plus de 3 000 concerts à son actif, Sam Willcox s'inscrit dans une longue histoire de scène, de compositions et de collaborations artistiques.
+          </p>
+          <p class="quote" data-i18n="aboutQuote">Du blues, du rock, du live — sans détour.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="shows">
+      <div class="container reveal">
+        <div class="eyebrow" data-i18n="showsEyebrow">Live & festivals</div>
+        <h2 class="section-title" data-i18n="showsTitle">CONCERTS À TRAVERS L'EUROPE</h2>
+        <p class="section-lead" data-i18n="showsLead">
+          Festivals, rassemblements et scènes où Willcox s'est produit au fil des années.
+        </p>
+
+        <div class="appearance-grid">
+          <div class="appearance appearance--biker-days"><strong>Biker Days Basel<br><small>Suisse</small></strong></div>
+          <div class="appearance appearance--rock-cars"><strong>Rock & Cars<br><small>Lavaur</small></strong></div>
+          <div class="appearance appearance--clefcy"><strong>Clefcy Rock<br><small>Jura</small></strong></div>
+          <div class="appearance appearance--aber"><strong>Aber Blues Lesneven<br><small>Bretagne</small></strong></div>
+          <div class="appearance appearance--victory"><strong>Victory Riders<br><small>Luxembourg</small></strong></div>
+          <div class="appearance appearance--haybes"><strong>Blues in Haybes Festival<br><small>Ardennes</small></strong></div>
+          <div class="appearance appearance--harley"><strong>Harley Day's Côte d'Opale<br><small>Hauts-de-France</small></strong></div>
+          <div class="appearance appearance--axone"><strong>Axone Tattoo Show<br><small>Franche-Comté</small></strong></div>
+          <div class="appearance appearance--poudriere"><strong>La Poudrière Festival avec UFO<br><small>Bourgogne</small></strong></div>
+          <div class="appearance appearance--tattoo"><strong>Tattoo Conventions<br><small>Germany</small></strong></div>
+          <div class="appearance appearance--presquile"><strong>The Presqu'île Blues Festival<br><small>Midi-Pyrénées</small></strong></div>
+          <div class="appearance appearance--raismes"><strong>Raismes Fest<br><small>Hauts-de-France</small></strong></div>
+          <div class="appearance appearance--mcjets"><strong>Concentration Mc Jets<br><small>Belgium</small></strong></div>
+          <div class="appearance appearance--narvalos"><strong>Narvalos Bikers<br><small>Luynes</small></strong></div>
+          <div class="appearance appearance--bluesroute"><strong>Blues Route Festival<br><small>Hollande</small></strong></div>
+          <div class="appearance appearance--more"><strong>Et bien d'autres...</strong></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--alt" id="music">
+      <div class="container reveal">
+        <div class="eyebrow" data-i18n="musicEyebrow">Écouter</div>
+        <h2 class="section-title" data-i18n="musicTitle">WILLCOX</h2>
+        <p class="section-lead" data-i18n="musicLead">Quelques morceaux à écouter directement.</p>
+
+        <div class="music-grid">
+          <article class="music-card">
+            <h3>The More You Sweat</h3>
+            <audio controls preload="none">
+              <source src="assets/Musiques/the more you sweat  M 17.wav" type="audio/wav" />
+            </audio>
+          </article>
+          <article class="music-card">
+            <h3>Boom Boom</h3>
+            <audio controls preload="none">
+              <source src="assets/Musiques/boom boom 2025 Mast 2.wav" type="audio/wav" />
+            </audio>
+          </article>
+          <article class="music-card">
+            <h3>Gonna Get Ya</h3>
+            <audio controls preload="none">
+              <source src="assets/Musiques/Gonna get ya 134.wav" type="audio/wav" />
+            </audio>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="gallery">
+      <div class="container reveal">
+        <h2 class="gallery-heading" data-i18n="galleryTitle">GALERIE</h2>
+
+        <div class="gallery-grid" id="galleryGrid">
+          <button class="g1" type="button"><img src="assets/galerie/willcox-concert-lille-7677.jpg" alt="Willcox en concert à Lille" loading="lazy" /></button>
+          <button class="g2" type="button"><img src="assets/galerie/albumnoir.jpg" alt="Album Noir" loading="lazy" /></button>
+          <button class="g3" type="button"><img src="assets/galerie/albumrouge.jpg" alt="Album Rouge" loading="lazy" /></button>
+          <button class="g4" type="button"><img src="assets/galerie/485.jpg" alt="Willcox live" loading="lazy" /></button>
+          <button class="g5" type="button"><img src="assets/galerie/525.jpg" alt="Willcox sur scène" loading="lazy" /></button>
+          <button class="g6" type="button"><img src="assets/galerie/4878.jpg" alt="Willcox live 4878" loading="lazy" /></button>
+          <button class="g7" type="button"><img src="assets/galerie/488494.jpg" alt="Willcox live 488494" loading="lazy" /></button>
+          <button class="g8" type="button"><img src="assets/galerie/488506.jpg" alt="Willcox live 488506" loading="lazy" /></button>
+          <button class="g9" type="button"><img src="assets/galerie/ARDEN ROCK.jpg" alt="Willcox à Arden Rock" loading="lazy" /></button>
+          <button class="g10" type="button"><img src="assets/galerie/IMG_1945.JPG" alt="Willcox en concert" loading="lazy" /></button>
+          <button class="g11" type="button"><img src="assets/galerie/ok1.jpg" alt="Willcox live" loading="lazy" /></button>
+          <button class="g12" type="button"><img src="assets/galerie/ok2.jpg" alt="Willcox live" loading="lazy" /></button>
+          <button class="g13" type="button"><img src="assets/galerie/Sam1.jpg" alt="Sam Willcox" loading="lazy" /></button>
+        </div>
+      </div>
+    </section>
+
+    <section class="section booking" id="booking">
+      <div class="container booking-grid reveal">
+        <div>
+          <div class="eyebrow" data-i18n="bookingEyebrow">Booking / Presse</div>
+          <h2 class="section-title" data-i18n="bookingTitle">PROGRAMMEZ WILLCOX</h2>
+          <p class="section-lead" data-i18n="bookingLead">
+            Festivals, clubs, événements : contactez directement le groupe pour une demande professionnelle.
+          </p>
+
+          <div class="booking-contact">
+            <small>Email</small>
+            <a href="mailto:willcox.rock.band@gmail.com">willcox.rock.band@gmail.com</a>
+          </div>
+
+          <a href="assets/pressbook_français.pdf" target="_blank" rel="noopener" class="btn btn--ghost" data-i18n="downloadPress">Voir le Press Kit ↗</a>
+        </div>
+
+        <div class="booking-panel">
+          <form action="https://formsubmit.co/willcox.rock.band@gmail.com" method="POST">
+            <input type="hidden" name="_subject" value="Nouvelle demande de booking — Willcox Band" />
+            <input type="hidden" name="_captcha" value="false" />
+
+            <div class="form-grid">
+              <div class="field">
+                <label for="name" data-i18n="formName">Nom / Organisation</label>
+                <input id="name" type="text" name="nom" required autocomplete="name" />
+              </div>
+
+              <div class="field">
+                <label for="email" data-i18n="formEmail">Email</label>
+                <input id="email" type="email" name="email" required autocomplete="email" />
+              </div>
+
+              <div class="field">
+                <label for="place" data-i18n="formPlace">Ville / Lieu / Festival</label>
+                <input id="place" type="text" name="lieu" />
+              </div>
+
+              <div class="field">
+                <label for="date" data-i18n="formDate">Date souhaitée</label>
+                <input id="date" type="text" name="date" placeholder="JJ/MM/AAAA" />
+              </div>
+
+              <div class="field field--full">
+                <label for="subject" data-i18n="formSubject">Objet</label>
+                <input id="subject" type="text" name="objet" required />
+              </div>
+
+              <div class="field field--full">
+                <label for="message" data-i18n="formMessage">Message</label>
+                <textarea id="message" name="message" required></textarea>
+              </div>
+
+              <div class="field field--full">
+                <button type="submit" class="btn btn--primary" data-i18n="formSubmit">Envoyer la demande</button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-grid">
+      <img class="footer-logo" src="assets/logowillcoxviolet.png" alt="Willcox Band" loading="lazy" />
+
+      <div class="socials" aria-label="Réseaux sociaux">
+        <a href="https://www.facebook.com/samwillcoxunplugged?locale=fr_FR" target="_blank" rel="noopener" aria-label="Facebook">
+          <img src="assets/facebooklogo.png" alt="" />
+        </a>
+        <a href="https://www.youtube.com/@WillcoxRockBand" target="_blank" rel="noopener" aria-label="YouTube">
+          <img src="assets/logoyoutubeviolet.png" alt="" />
+        </a>
+      </div>
+
+      <div class="copyright">© <span id="year"></span> Willcox Band. Tous droits réservés.</div>
+    </div>
+  </footer>
+
+  <a href="#booking" class="btn btn--primary mobile-booking" data-i18n="mobileBook">Programmer Willcox</a>
+
+  <div class="lightbox" id="lightbox" aria-hidden="true" role="dialog" aria-label="Galerie agrandie">
+    <button class="lightbox-btn lightbox-close" id="lightboxClose" type="button" aria-label="Fermer">×</button>
+    <button class="lightbox-btn lightbox-prev" id="lightboxPrev" type="button" aria-label="Image précédente">‹</button>
+    <img id="lightboxImage" src="" alt="" />
+    <button class="lightbox-btn lightbox-next" id="lightboxNext" type="button" aria-label="Image suivante">›</button>
+  </div>
+
+  <script>
+
+    // Intro vidéo plein écran
+    const introScreen = document.getElementById('introVideoScreen');
+    const introVideo = document.getElementById('introVideo');
+    const introSoundBtn = document.getElementById('introSoundBtn');
+    const introEnterBtn = document.getElementById('introEnterBtn');
+    const replayIntroBtn = document.getElementById('replayIntroBtn');
+    const presentationVideo = document.getElementById('presentationVideo');
+
+    const closeIntro = () => {
+      if (!introScreen) return;
+      introScreen.classList.add('is-closing');
+      document.body.classList.remove('intro-open');
+      introVideo.muted = true;
+      window.setTimeout(() => {
+        introVideo.pause();
+        introScreen.hidden = true;
+      }, 680);
+    };
+
+    const openIntro = () => {
+      if (!introScreen || !introVideo) return;
+      introScreen.hidden = false;
+      introScreen.classList.remove('is-closing');
+      document.body.classList.add('intro-open');
+      introVideo.currentTime = 0;
+      introVideo.muted = true;
+      introVideo.volume = 1;
+      if (introSoundBtn) {
+        introSoundBtn.setAttribute('aria-pressed', 'false');
+        introSoundBtn.textContent = '▶ Activer le son';
+      }
+      introVideo.play().catch(() => {});
+    };
+
+    introSoundBtn?.addEventListener('click', () => {
+      introVideo.muted = !introVideo.muted;
+      if (!introVideo.muted) {
+        introVideo.volume = 1;
+        introVideo.play().catch(() => {});
+      }
+      introSoundBtn.setAttribute('aria-pressed', String(!introVideo.muted));
+      introSoundBtn.textContent = introVideo.muted ? '▶ Activer le son' : '🔊 Couper le son';
+    });
+
+    introEnterBtn?.addEventListener('click', closeIntro);
+    replayIntroBtn?.addEventListener('click', openIntro);
+
+    // Affiche une vraie image de la vidéo Présentation Live avant lecture.
+    presentationVideo?.addEventListener('loadedmetadata', () => {
+      if (presentationVideo.currentTime < 0.15) presentationVideo.currentTime = 0.2;
+    }, { once: true });
+
+    document.addEventListener('keydown', (event) => {
+      if (!introScreen || introScreen.hidden) return;
+      if (event.key === 'Escape' || event.key === 'Enter') closeIntro();
+    });
+
+    const header = document.getElementById('siteHeader');
+    const menuToggle = document.getElementById('menuToggle');
+    const navLinks = document.getElementById('navLinks');
+    const langToggle = document.getElementById('langToggle');
+
+    const updateHeader = () => {
+      header.classList.toggle('scrolled', window.scrollY > 24);
+    };
+    updateHeader();
+    window.addEventListener('scroll', updateHeader, { passive: true });
+
+    menuToggle.addEventListener('click', () => {
+      const open = navLinks.classList.toggle('open');
+      menuToggle.setAttribute('aria-expanded', String(open));
+      menuToggle.textContent = open ? '×' : '☰';
+    });
+
+    navLinks.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        navLinks.classList.remove('open');
+        menuToggle.setAttribute('aria-expanded', 'false');
+        menuToggle.textContent = '☰';
+      });
+    });
+
+    const translations = {
+      fr: {
+        navLive: 'Live', navAbout: 'Le groupe', navShows: 'Scènes', navMusic: 'Musique', navGallery: 'Galerie', navPress: 'Press kit', navBook: 'Programmer Willcox', bookShort: 'Booking',
+        heroKicker: 'Blues-rock • France & Europe', heroTag: 'JUST STRAIGHT BLUES-ROCK', heroCopy: 'Une énergie live brute, taillée pour les festivals, clubs et grands événements.', watchLive: '▶ Voir le live', bookBand: 'Programmer le groupe', scroll: 'Découvrir',
+        statShows: 'concerts', statEurope: 'festivals & scènes', statEnergy: 'blues-rock energy',
+        liveEyebrow: 'Voir Willcox en live', liveTitle: '', liveLead: '', videoMainTitle: 'Willcox — Présentation Live', videoMainMeta: 'Blues-rock • Live performance', videoSideTitle: 'BACK TO THE BONE', videoSideCopy: "Un second aperçu de l'univers du groupe et de son énergie scénique.",
+        aboutEyebrow: 'Le groupe', aboutTitle: 'JUST STRAIGHT BLUES-ROCK', aboutP1: "Willcox Band écume la scène nationale et internationale depuis de nombreuses années, avec des passages dans de nombreux festivals à travers l'Europe.", aboutP2: "Avec plus de 3 000 concerts à son actif, Sam Willcox s'inscrit dans une longue histoire de scène, de compositions et de collaborations artistiques.", aboutQuote: 'Du blues, du rock, du live — sans détour.',
+        showsEyebrow: 'Live & festivals', showsTitle: "CONCERTS À TRAVERS L'EUROPE", showsLead: "Festivals, rassemblements et scènes où Willcox s'est produit au fil des années.",
+        musicEyebrow: 'Écouter', musicTitle: 'LE SON WILLCOX', musicLead: 'Quelques morceaux à écouter directement.',
+        galleryEyebrow: 'Galerie', galleryTitle: 'GALERIE',
+        bookingEyebrow: 'Booking / Presse', bookingTitle: 'PROGRAMMEZ WILLCOX', bookingLead: 'Festivals, clubs, événements : contactez directement le groupe pour une demande professionnelle.', downloadPress: 'Voir le Press Kit ↗',
+        formName: 'Nom / Organisation', formEmail: 'Email', formPlace: 'Ville / Lieu / Festival', formDate: 'Date souhaitée', formSubject: 'Objet', formMessage: 'Message', formSubmit: 'Envoyer la demande', mobileBook: 'Programmer Willcox'
+      },
+      en: {
+        navLive: 'Live', navAbout: 'Band', navShows: 'Stages', navMusic: 'Music', navGallery: 'Gallery', navPress: 'Press kit', navBook: 'Book Willcox', bookShort: 'Booking',
+        heroKicker: 'Blues-rock • France & Europe', heroTag: 'JUST STRAIGHT BLUES-ROCK', heroCopy: 'Raw live energy built for festivals, clubs and major events.', watchLive: '▶ Watch live', bookBand: 'Book the band', scroll: 'Discover',
+        statShows: 'shows', statEurope: 'festivals & stages', statEnergy: 'blues-rock energy',
+        liveEyebrow: 'Watch Willcox live', liveTitle: '', liveLead: '', videoMainTitle: 'Willcox — Live Presentation', videoMainMeta: 'Blues-rock • Live performance', videoSideTitle: 'BACK TO THE BONE', videoSideCopy: "Another glimpse into the band's sound and stage energy.",
+        aboutEyebrow: 'The band', aboutTitle: 'JUST STRAIGHT BLUES-ROCK', aboutP1: 'Willcox Band has been touring nationally and internationally for many years, appearing at numerous festivals across Europe.', aboutP2: 'With more than 3,000 shows behind him, Sam Willcox has built a long history of live performances, songwriting and artistic collaborations.', aboutQuote: 'Blues, rock, live — straight to the point.',
+        showsEyebrow: 'Live & festivals', showsTitle: 'CONCERTS ACROSS EUROPE', showsLead: 'Festivals, gatherings and stages where Willcox has performed over the years.',
+        musicEyebrow: 'Listen', musicTitle: 'THE WILLCOX SOUND', musicLead: 'A few tracks to listen to directly.',
+        galleryEyebrow: 'Gallery', galleryTitle: 'GALLERY',
+        bookingEyebrow: 'Booking / Press', bookingTitle: 'BOOK WILLCOX', bookingLead: 'Festivals, clubs and events: contact the band directly for professional inquiries.', downloadPress: 'View Press Kit ↗',
+        formName: 'Name / Organisation', formEmail: 'Email', formPlace: 'City / Venue / Festival', formDate: 'Requested date', formSubject: 'Subject', formMessage: 'Message', formSubmit: 'Send booking request', mobileBook: 'Book Willcox'
+      }
+    };
+
+    let currentLang = 'fr';
+    langToggle.addEventListener('click', () => {
+      currentLang = currentLang === 'fr' ? 'en' : 'fr';
+      document.documentElement.lang = currentLang;
+      langToggle.textContent = currentLang === 'fr' ? 'EN' : 'FR';
+      document.querySelectorAll('[data-i18n]').forEach(el => {
+        const key = el.dataset.i18n;
+        if (translations[currentLang][key]) el.textContent = translations[currentLang][key];
+      });
+    });
+
+    const revealObserver = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: .12 });
+
+    document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+
+    const galleryButtons = [...document.querySelectorAll('#galleryGrid button')];
+    const galleryImages = galleryButtons.map(btn => btn.querySelector('img'));
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImage = document.getElementById('lightboxImage');
+    const lightboxClose = document.getElementById('lightboxClose');
+    const lightboxPrev = document.getElementById('lightboxPrev');
+    const lightboxNext = document.getElementById('lightboxNext');
+    let currentImage = 0;
+
+    function showLightbox(index) {
+      currentImage = (index + galleryImages.length) % galleryImages.length;
+      const img = galleryImages[currentImage];
+      lightboxImage.src = img.src;
+      lightboxImage.alt = img.alt;
+      lightbox.classList.add('open');
+      lightbox.setAttribute('aria-hidden', 'false');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeLightbox() {
+      lightbox.classList.remove('open');
+      lightbox.setAttribute('aria-hidden', 'true');
+      document.body.style.overflow = '';
+    }
+
+    galleryButtons.forEach((btn, index) => btn.addEventListener('click', () => showLightbox(index)));
+    lightboxClose.addEventListener('click', closeLightbox);
+    lightboxPrev.addEventListener('click', () => showLightbox(currentImage - 1));
+    lightboxNext.addEventListener('click', () => showLightbox(currentImage + 1));
+    lightbox.addEventListener('click', e => { if (e.target === lightbox) closeLightbox(); });
+
+    document.addEventListener('keydown', e => {
+      if (!lightbox.classList.contains('open')) return;
+      if (e.key === 'Escape') closeLightbox();
+      if (e.key === 'ArrowLeft') showLightbox(currentImage - 1);
+      if (e.key === 'ArrowRight') showLightbox(currentImage + 1);
+    });
+
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "MusicGroup",
+    "name": "Willcox Band",
+    "url": "https://willcoxband.netlify.app/",
+    "genre": ["Blues Rock", "Rock"],
+    "sameAs": [
+      "https://www.facebook.com/samwillcoxunplugged?locale=fr_FR",
+      "https://www.youtube.com/@WillcoxRockBand"
+    ]
+  }
+  </script>
+</body>
+</html>
