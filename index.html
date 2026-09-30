@@ -951,7 +951,7 @@
 
     <div class="intro-video__controls">
       <button class="btn btn--ghost" id="introSoundBtn" type="button" aria-pressed="false">▶ Activer le son</button>
-      <button class="btn btn--primary intro-video__enter" id="introEnterBtn" type="button">Entrer sur le site →</button>
+      <button class="btn btn--primary intro-video__enter" id="introEnterBtn" type="button" data-i18n="introEnter">Entrer sur le site →</button>
     </div>
   </section>
 
@@ -1276,7 +1276,7 @@
       introVideo.volume = 1;
       if (introSoundBtn) {
         introSoundBtn.setAttribute('aria-pressed', 'false');
-        introSoundBtn.textContent = '▶ Activer le son';
+        updateIntroSoundLabel();
       }
       introVideo.play().catch(() => {});
     };
@@ -1288,7 +1288,7 @@
         introVideo.play().catch(() => {});
       }
       introSoundBtn.setAttribute('aria-pressed', String(!introVideo.muted));
-      introSoundBtn.textContent = introVideo.muted ? '▶ Activer le son' : '🔊 Couper le son';
+      updateIntroSoundLabel();
     });
 
     introEnterBtn?.addEventListener('click', closeIntro);
@@ -1340,7 +1340,8 @@
         musicEyebrow: 'Écouter', musicTitle: 'LE SON WILLCOX', musicLead: 'Quelques morceaux à écouter directement.',
         galleryEyebrow: 'Galerie', galleryTitle: 'GALERIE',
         bookingEyebrow: 'Booking / Presse', bookingTitle: 'PROGRAMMEZ WILLCOX', bookingLead: 'Festivals, clubs, événements : contactez directement le groupe pour une demande professionnelle.', downloadPress: 'Voir le Press Kit ↗',
-        formName: 'Nom / Organisation', formEmail: 'Email', formPlace: 'Ville / Lieu / Festival', formDate: 'Date souhaitée', formSubject: 'Objet', formMessage: 'Message', formSubmit: 'Envoyer la demande', mobileBook: 'Programmer Willcox'
+        formName: 'Nom / Organisation', formEmail: 'Email', formPlace: 'Ville / Lieu / Festival', formDate: 'Date souhaitée', formSubject: 'Objet', formMessage: 'Message', formSubmit: 'Envoyer la demande', mobileBook: 'Programmer Willcox',
+        introSoundOn: '▶ Activer le son', introSoundOff: '🔊 Couper le son', introEnter: 'Entrer sur le site →'
       },
       en: {
         navLive: 'Live', navAbout: 'Band', navShows: 'Stages', navMusic: 'Music', navGallery: 'Gallery', navPress: 'Press kit', navBook: 'Book Willcox', bookShort: 'Booking',
@@ -1352,8 +1353,16 @@
         musicEyebrow: 'Listen', musicTitle: 'THE WILLCOX SOUND', musicLead: 'A few tracks to listen to directly.',
         galleryEyebrow: 'Gallery', galleryTitle: 'GALLERY',
         bookingEyebrow: 'Booking / Press', bookingTitle: 'BOOK WILLCOX', bookingLead: 'Festivals, clubs and events: contact the band directly for professional inquiries.', downloadPress: 'View Press Kit ↗',
-        formName: 'Name / Organisation', formEmail: 'Email', formPlace: 'City / Venue / Festival', formDate: 'Requested date', formSubject: 'Subject', formMessage: 'Message', formSubmit: 'Send booking request', mobileBook: 'Book Willcox'
+        formName: 'Name / Organisation', formEmail: 'Email', formPlace: 'City / Venue / Festival', formDate: 'Requested date', formSubject: 'Subject', formMessage: 'Message', formSubmit: 'Send booking request', mobileBook: 'Book Willcox',
+        introSoundOn: '▶ Enable sound', introSoundOff: '🔊 Mute', introEnter: 'Enter the site →'
       }
+    };
+
+    const updateIntroSoundLabel = () => {
+      if (!introSoundBtn) return;
+      introSoundBtn.textContent = introVideo.muted
+        ? translations[currentLang].introSoundOn
+        : translations[currentLang].introSoundOff;
     };
 
     const applyLanguage = (lang) => {
@@ -1371,6 +1380,8 @@
       el.textContent = translations[currentLang][key];
     }
   });
+
+  updateIntroSoundLabel();
 };
 
 
